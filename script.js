@@ -227,16 +227,16 @@ switch (true) {
 		console.log(`Carico medio`)
 		break;
 	case (massaTotale <= 900):
-		console.log(`atte`)
+		console.log(`Attenzione: oltre 700`)
 		break;
 	case (massaTotale <= 1000):
-		console.log(`Attenzione: oltre 700`)
+		console.log(`Carico critico`)
 		break;
 	case (massaTotale > 1000):
 		console.log(`PERICOLO: sovraccarico`)
 		break;
 
-}
+};
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
    Stampa l'array.
@@ -248,8 +248,8 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	if (starWarsCharacters[i].gender === 'n/a') {
 		starWarsCharacters[i].gender = 'robot'
 	}
-}
-console.log(starWarsCharacters)
+};
+console.log(starWarsCharacters);
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
@@ -285,7 +285,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 			nomi.splice(i, 1)
 		}
 	}
-} console.log(`lunghezza di nomi dopo splice: ${nomi.length}`)
+} console.log(`lunghezza di nomi dopo splice: ${nomi.length}`);
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
@@ -295,19 +295,19 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let indice = Math.floor(Math.random() * starWarsCharacters.length)
-personaggio = starWarsCharacters[indice]
+let indice = Math.floor(Math.random() * starWarsCharacters.length);
+personaggio = starWarsCharacters[indice];
 
 
 for( let i = 0; i < starWarsCharacters.length; i++){
 	if(starWarsCharacters[i] === personaggio[indice]){
 		personaggio = starWarsCharacters[i]
 	} else if (personaggio.gender === 'female') {
-		console.log(`Lei e alta ${personaggio.height}`)
+		console.log(`${personaggio.name} e alta ${personaggio.height}`)
 	} else {
-		console.log(`Lui e alto ${personaggio.height}`)
+		console.log(`${personaggio.name} e alto ${personaggio.height}`)
 	}
-}
+};
 
 
 /* --EXTRA-- ESERCIZIO 11 — Conta per colore di occhi
@@ -318,4 +318,4 @@ for( let i = 0; i < starWarsCharacters.length; i++){
 /* SCRIVI QUI LA TUA RISPOSTA */
 for(const eye_color in perColoreOcchi){
 console.log(`colore occhi ${[eye_color]}: ${perColoreOcchi[eye_color].length} personaggi`)
-}
+};
