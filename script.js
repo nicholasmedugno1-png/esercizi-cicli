@@ -219,6 +219,13 @@ console.log(perColoreOcchi)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+for(let i = 0; i < starWarsCharacters.length; i++) {
+	if(starWarsCharacters[i].gender === 'n/a'){
+		starWarsCharacters[i].gender = 'robot'
+	}
+}
+console.log(starWarsCharacters)
+
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
    L'altezza è una stringa: convertila con Number().
