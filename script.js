@@ -167,25 +167,25 @@ const perColoreOcchi = {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 for( let i = 0; i < starWarsCharacters.length; i++){
-	switch(true){
+	switch(starWarsCharacters[i].eye_color){
 		
-		case(starWarsCharacters[i].eye_color === 'blue'):
+		case 'blue':
 		perColoreOcchi.blue.push(starWarsCharacters[i])
 	 
 	break;
-		case(starWarsCharacters[i].eye_color === 'yellow'):
+		case 'yellow':
 		perColoreOcchi.yellow.push(starWarsCharacters[i])
 	 
 	break;
-		case(starWarsCharacters[i].eye_color === 'brown'):
+		case 'brown':
 		perColoreOcchi.brown.push(starWarsCharacters[i])
 	
 	break;
-		case(starWarsCharacters[i].eye_color === 'red'):
+		case'red':
 		perColoreOcchi.red.push(starWarsCharacters[i])
 			
 	break;
-		case(starWarsCharacters[i].eye_color === 'blue-gray'):
+		case 'blue-gray':
 		perColoreOcchi['blue-gray'].push(starWarsCharacters[i])
 			
 	break;
@@ -203,7 +203,7 @@ console.log(perColoreOcchi)
 let i = 0;
 let massaTotale = 0;
 while(i < starWarsCharacters.length){
-	massaTotale += Number(starWarsCharacters[i].mass)
+	massaTotale += Number(starWarsCharacters[i].mass);
 	i++
 };
 console.log(massaTotale);
@@ -258,20 +258,19 @@ console.log(starWarsCharacters)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let altezzaMaggiore = 0;
-let altezzaMinore = 300;
+let altezzaMaggiore = starWarsCharacters[0];
+let altezzaMinore = starWarsCharacters[0];
 for(let i = 0; i < starWarsCharacters.length; i++){
-	let altezza = Number(starWarsCharacters[i].height)
-	if(altezza > altezzaMaggiore){
-		altezzaMaggiore = altezza
+	if(Number(starWarsCharacters[i].height) > Number(altezzaMaggiore.height)){
+		altezzaMaggiore = starWarsCharacters[i]
 	}  
-	if (altezza < altezzaMinore){
-		altezzaMinore = altezza
+	if (Number(starWarsCharacters[i].height) < Number(altezzaMinore.height)){
+		altezzaMinore = starWarsCharacters[i]
 	}
 };
 
-console.log(altezzaMaggiore)
-console.log(altezzaMinore)
+console.log(`piu alto: ${altezzaMaggiore.name} (${altezzaMaggiore.height}cm)`)
+console.log(`piu basso: ${altezzaMinore.name} (${altezzaMinore.height}cm)`)
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
    Quando combaciano per nome, rimuovi quel nome da nomi con splice.
@@ -279,6 +278,7 @@ console.log(altezzaMinore)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
