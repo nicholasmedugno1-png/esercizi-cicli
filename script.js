@@ -316,3 +316,6 @@ for( let i = 0; i < starWarsCharacters.length; i++){
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for(const eye_color in perColoreOcchi){
+console.log(`colore occhi ${[eye_color]}: ${perColoreOcchi[eye_color].length} personaggi`)
+}
