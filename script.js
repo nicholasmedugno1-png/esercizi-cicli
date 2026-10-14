@@ -200,6 +200,13 @@ console.log(perColoreOcchi)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let i = 0;
+let massaTotale = 0;
+while(i < starWarsCharacters.length){
+	massaTotale += Number(starWarsCharacters[i].mass)
+	i++
+};
+console.log(massaTotale);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
@@ -211,7 +218,25 @@ console.log(perColoreOcchi)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+switch(true){
+		
+		case(massaTotale < 500):
+		console.log(`Carico leggero`)
+	 break;
+		case(massaTotale <= 700):
+		console.log(`Carico medio`)
+	 break;
+		case(massaTotale <= 900):
+		console.log(`atte`)
+	 break;
+		case(massaTotale <= 1000):
+		console.log(`Attenzione: oltre 700`)
+	 break;
+		case(massaTotale > 1000):
+		console.log(`PERICOLO: sovraccarico`)
+	 break;
+	
+	}
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
    Stampa l'array.
@@ -233,7 +258,20 @@ console.log(starWarsCharacters)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let altezzaMaggiore = 0;
+let altezzaMinore = 300;
+for(let i = 0; i < starWarsCharacters.length; i++){
+	let altezza = Number(starWarsCharacters[i].height)
+	if(altezza > altezzaMaggiore){
+		altezzaMaggiore = altezza
+	}  
+	if (altezza < altezzaMinore){
+		altezzaMinore = altezza
+	}
+};
 
+console.log(altezzaMaggiore)
+console.log(altezzaMinore)
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
    Quando combaciano per nome, rimuovi quel nome da nomi con splice.
