@@ -279,13 +279,15 @@ console.log(`piu basso: ${altezzaMinore.name} (${altezzaMinore.height}cm)`)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(`lunghezza di nomi prima di splice: ${nomi.length}`);
-for (let i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < nomi.length; i++) {
 	for (let j = 0; j < personaggiFemminili.length; j++) {
-		if (starWarsCharacters[i].name === personaggiFemminili[j].name) {
-			nomi.splice(i, 1)
+		if (nomi[i] === personaggiFemminili[j].name) {
+			nomi.splice(i, 1);
+			i--
 		}
 	}
 } console.log(`lunghezza di nomi dopo splice: ${nomi.length}`);
+			
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
@@ -296,18 +298,20 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let indice = Math.floor(Math.random() * starWarsCharacters.length);
-personaggio = starWarsCharacters[indice];
+let personaggio = starWarsCharacters[indice];
 
-
-for( let i = 0; i < starWarsCharacters.length; i++){
-	if(starWarsCharacters[i] === personaggio[indice]){
-		personaggio = starWarsCharacters[i]
-	} else if (personaggio.gender === 'female') {
+	if (personaggio.gender === 'female') {
 		console.log(`${personaggio.name} e alta ${personaggio.height}`)
+	} else if (personaggio.gender === 'robot'){
+		console.log(`il personaggio ${personaggio.name} e un: ${personaggio.gender}`)
 	} else {
 		console.log(`${personaggio.name} e alto ${personaggio.height}`)
-	}
-};
+	} 
+	
+	if ( personaggio.hair_color !== 'n/a' && personaggio.hair_color !== 'none') {
+		console.log(`capelli: ${personaggio.hair_color}`)
+	} else {console.log(`senza capelli`)};
+
 
 
 /* --EXTRA-- ESERCIZIO 11 — Conta per colore di occhi
